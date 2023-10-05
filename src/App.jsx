@@ -1,7 +1,7 @@
 import "./styles/global.css";
 
 // Reaproveitamento de estruturas
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Nome = "fulano de tal";
 
@@ -19,9 +19,16 @@ function App() {
               <h2><b>{"< "}</b>{Nome}<b>{" />"}</b></h2>
             </div>
             <nav>
-              <a href="#">home</a>
-              <a href="#">projects</a>
-              <a href="#">contato</a>
+              {/* links para navegação */}
+              <Link to={"/"}>
+                <a href="#">home</a>
+              </Link>
+              <Link to={"projects"}>
+                <a href="#">projects</a>
+              </Link>
+              <Link to={"contacts"}>
+                <a href="#">contacts</a>
+              </Link>
             </nav>
           </div>  
         </div>
@@ -30,7 +37,7 @@ function App() {
       <Outlet />
       
       <footer>
-        <p>{Nome} de tal with <b>React.js &#9889;</b>.</p>
+        <p>powered by {Nome} with <b>React.js &#9889;</b>.</p>
       </footer>
     </main>
   )
