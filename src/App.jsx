@@ -1,6 +1,11 @@
 import "./styles/global.css";
-const Nome = "fulano de tal";
 import j from "./assets/j-icon.png"
+
+// Reaproveitamento de estruturas
+import { Outlet } from "react-router-dom";
+
+const Nome = "fulano de tal";
+
 function App() {
 
   return (
@@ -22,7 +27,8 @@ function App() {
           </div>  
         </div>
       </header>
-      <section>
+      <Outlet />
+      {/* <section>
         <div className="content">
           <figure className="content-foto">
             <img src="https://img.freepik.com/fotos-premium/feliz-jovem-adulto-afro-americano-andando-no-parque-usando-fones-de-ouvido_113876-3750.jpg" alt="photo" />
@@ -119,7 +125,7 @@ function App() {
               </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <footer>
         <p>{Nome} de tal with <b>React.js &#9889;</b>.</p>
       </footer>
