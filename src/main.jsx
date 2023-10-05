@@ -8,19 +8,26 @@ import Home from './pages/Home/index.jsx'
 import Projects from './pages/Projects/index.jsx'
 import Contacts from './pages/Contacts/index.jsx'
 
+// Alterado para comportar o reaproveitamento de estrutura
 const router = createBrowserRouter(
     [
       {
         path:"/",
-        element: <Home />
-      },
-      {
-        path:"/projects",
-        element: <Projects />
-      },
-      {
-        path:"/contacts",
-        element: <Contacts />
+        element: <App />,
+        children:[
+          {
+            path:"/",
+            element: <Home />
+          },
+          {
+            path:"/projects",
+            element: <Projects />
+          },
+          {
+            path:"/contacts",
+            element: <Contacts />
+          }
+        ]
       }
     ]
   )
